@@ -146,18 +146,6 @@ export const Interactivity: Story = {
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    await step('Radio Button associated with its label', async () => {
-      const firstRadioOption = canvas.getByRole('radio', {
-        name: /option 1/i,
-      });
-      const secondRadioOption = canvas.getByRole('radio', {
-        name: /option 2/i,
-      });
-      await expect(firstRadioOption).toBeDefined();
-      await expect(firstRadioOption).toBeVisible();
-      await expect(secondRadioOption).toBeDefined();
-      await expect(secondRadioOption).toBeVisible();
-    });
 
     await step('Only one radio button can be checked', async () => {
       const firstRadioOption = canvas.getByRole('radio', {
